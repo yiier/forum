@@ -65,7 +65,7 @@ Edit the file `config/db.php` with real data, for example:
 ```php
 return [
 	'class' => 'yii\db\Connection',
-	'dsn' => 'mysql:host=127.0.0.1;dbname=yii2basic', // Don't use localhost, Because very slow to connect to mysql
+	'dsn' => 'mysql:host=127.0.0.1;dbname=yii2basic', // Don't use localhost, Because IPv4/IPv6 very slow to connect to mysql
 	'username' => 'root',
 	'password' => '1234',
 	'charset' => 'utf8',
