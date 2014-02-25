@@ -1,7 +1,7 @@
 {
 	"name": "yiier/forum",
 	"description": "Yii 2 forum",
-	"keywords": ["yii", "framework", "forum"],
+	"keywords": ["yii", "yii2", "forum"],
 	"homepage": "http://www.yunzzz.com/",
 	"type": "project",
 	"license": "BSD-3-Clause",
