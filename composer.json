@@ -10,7 +10,7 @@
 		"wiki": "https://github.com/yiier/forum/wiki",
 		"source": "https://github.com/yiier/forum"
 	},
-
+	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
