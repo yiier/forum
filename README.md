@@ -35,6 +35,24 @@ The minimum requirement by this application template that your Web server suppor
 INSTALLATION
 ------------
 
+### Install via github
+
+~~~
+clone https://github.com/yiier/forum.git
+~~~
+
+Then download [Composer](https://getcomposer.org/composer.phar)
+take the composer.phar in the web root directory,using the following command:
+
+~~~
+php composer.phar update
+~~~
+
+You can then access the application through the following URL:
+
+~~~
+http://localhost/forum/web/
+~~~
 
 ### Install via Composer
 
