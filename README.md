@@ -1,7 +1,7 @@
 forum
 =====
 
-forum based on yii2,this is an experimental product, not for production, unless you know what you are doing
+forum based on yii2,this is an experimental product, not use for production, unless you know what you are doing
 
 
 ## forum feature.

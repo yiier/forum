@@ -15,7 +15,10 @@
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
 		"yiisoft/yii2-bootstrap": "*",
-		"yiisoft/yii2-swiftmailer": "*"
+		"yiisoft/yii2-swiftmailer": "*",
+		"creocoder/yii2-nested-set-behavior": "*",
+		"yiisoft/yii2-authclient": "*",
+		"robregonm/yii2-auth": "dev-master"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",
