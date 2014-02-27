@@ -30,8 +30,6 @@ use yii\widgets\ActiveForm;
 
 		<?= $form->field($model, 'replied_at')->textInput() ?>
 
-		<?= $form->field($model, 'first')->textInput() ?>
-
 		<?= $form->field($model, 'replies_count')->textInput() ?>
 
 		<div class="form-group">

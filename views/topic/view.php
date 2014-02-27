@@ -35,7 +35,6 @@ $this->params['breadcrumbs'][] = $this->title;
 			'content:ntext',
 			'node_id',
 			'user_id',
-			'first',
 			'created_at',
 			'updated_at',
 			'replies_count',

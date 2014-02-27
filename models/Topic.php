@@ -10,7 +10,6 @@ namespace app\models;
  * @property string $content
  * @property integer $node_id
  * @property integer $user_id
- * @property integer $first
  * @property integer $created_at
  * @property integer $updated_at
  * @property integer $replies_count
@@ -35,7 +34,7 @@ class Topic extends \yii\db\ActiveRecord
 		return [
 			[['title', 'content', 'node_id', 'user_id', 'created_at', 'updated_at', 'last_reply_user_id', 'replied_at'], 'required'],
 			[['content'], 'string'],
-			[['node_id', 'user_id', 'first', 'created_at', 'updated_at', 'replies_count', 'last_reply_user_id', 'replied_at'], 'integer'],
+			[['node_id', 'user_id', 'created_at', 'updated_at', 'replies_count', 'last_reply_user_id', 'replied_at'], 'integer'],
 			[['title'], 'string', 'max' => 255]
 		];
 	}
@@ -51,7 +50,6 @@ class Topic extends \yii\db\ActiveRecord
 			'content' => 'Content',
 			'node_id' => 'Node ID',
 			'user_id' => 'User ID',
-			'first' => 'First',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
 			'replies_count' => 'Replies Count',

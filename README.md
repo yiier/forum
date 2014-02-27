@@ -45,7 +45,7 @@ Then download [Composer](https://getcomposer.org/composer.phar)
 take the composer.phar in the web root directory,using the following command:
 
 ~~~
-php composer.phar update
+php composer.phar update --prefer-dist
 ~~~
 
 You can then access the application through the following URL:

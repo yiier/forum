@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2014 年 02 月 26 日 14:18
+-- 生成日期: 2014 年 02 月 27 日 03:32
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -48,7 +48,6 @@ CREATE TABLE IF NOT EXISTS `tbl_topic` (
   `content` text NOT NULL,
   `node_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `first` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
   `replies_count` int(11) NOT NULL DEFAULT '0',
