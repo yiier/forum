@@ -8,6 +8,7 @@ namespace app\models;
  * @property integer $id
  * @property string $title
  * @property string $content
+ * @property string $source
  * @property integer $node_id
  * @property integer $user_id
  * @property integer $created_at
@@ -32,9 +33,9 @@ class Topic extends \yii\db\ActiveRecord
 	public function rules()
 	{
 		return [
-			[['title', 'content', 'node_id', 'user_id', 'created_at', 'updated_at', 'last_reply_user_id', 'replied_at'], 'required'],
-			[['content'], 'string'],
-			[['node_id', 'user_id', 'created_at', 'updated_at', 'replies_count', 'last_reply_user_id', 'replied_at'], 'integer'],
+			[['title', 'source', 'node_id'], 'required'],
+			[['source'], 'string'],
+			[['node_id'], 'integer'],
 			[['title'], 'string', 'max' => 255]
 		];
 	}
@@ -48,6 +49,7 @@ class Topic extends \yii\db\ActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'content' => 'Content',
+			'source' => 'source',
 			'node_id' => 'Node ID',
 			'user_id' => 'User ID',
 			'created_at' => 'Created At',

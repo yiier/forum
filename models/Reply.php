@@ -8,6 +8,7 @@ namespace app\models;
  * @property integer $id
  * @property integer $topic_id
  * @property string $content
+ * @property string $source
  * @property integer $user_id
  * @property integer $created_at
  * @property integer $updated_at
@@ -28,9 +29,8 @@ class Reply extends \yii\db\ActiveRecord
 	public function rules()
 	{
 		return [
-			[['topic_id', 'content', 'user_id', 'created_at', 'updated_at'], 'required'],
-			[['topic_id', 'user_id', 'created_at', 'updated_at'], 'integer'],
-			[['content'], 'string']
+			[['source'], 'required'],
+			[['source'], 'string']
 		];
 	}
 
@@ -43,6 +43,7 @@ class Reply extends \yii\db\ActiveRecord
 			'id' => 'ID',
 			'topic_id' => 'Topic ID',
 			'content' => 'Content',
+			'source' => 'source',
 			'user_id' => 'User ID',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',

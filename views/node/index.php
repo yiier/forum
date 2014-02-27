@@ -9,7 +9,7 @@ use yii\widgets\ListView;
  * @var app\models\search\NodeSearch $searchModel
  */
 
-$this->title = 'Nodes';
+$this->title = '节点';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="node-index">
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
 	<p>
-		<?= Html::a('Create Node', ['create'], ['class' => 'btn btn-success']) ?>
+		<?= Html::a('创建节点', ['create'], ['class' => 'btn btn-success']) ?>
 	</p>
 
 	<?php echo ListView::widget([

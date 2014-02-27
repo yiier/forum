@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2014 年 02 月 27 日 08:27
+-- 生成日期: 2014 年 02 月 27 日 15:23
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -38,7 +38,16 @@ CREATE TABLE IF NOT EXISTS `tbl_node` (
   KEY `lft` (`lft`),
   KEY `rgt` (`rgt`),
   KEY `level` (`level`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `tbl_node`
+--
+
+INSERT INTO `tbl_node` (`id`, `name`, `summary`, `topics_count`, `lft`, `rgt`, `level`) VALUES
+(1, '根节点', '全站根节点', 0, 1, 6, 1),
+(2, 'yii2', '', 0, 2, 2, 2),
+(3, 'gii', 'sss', 0, 5, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -50,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `tbl_reply` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `topic_id` int(11) NOT NULL,
   `content` text NOT NULL,
+  `source` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
@@ -66,6 +76,7 @@ CREATE TABLE IF NOT EXISTS `tbl_topic` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
+  `source` text NOT NULL,
   `node_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created_at` int(11) NOT NULL,

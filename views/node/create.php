@@ -7,8 +7,8 @@ use yii\helpers\Html;
  * @var app\models\Node $model
  */
 
-$this->title = 'Create Node';
-$this->params['breadcrumbs'][] = ['label' => 'Nodes', 'url' => ['index']];
+$this->title = '创建节点';
+$this->params['breadcrumbs'][] = ['label' => '节点', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="node-create">

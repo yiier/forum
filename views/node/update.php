@@ -7,10 +7,10 @@ use yii\helpers\Html;
  * @var app\models\Node $model
  */
 
-$this->title = 'Update Node: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Nodes', 'url' => ['index']];
+$this->title = '更新节点: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => '节点', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = '更新';
 ?>
 <div class="node-update">
 

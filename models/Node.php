@@ -30,7 +30,6 @@ class Node extends \yii\db\ActiveRecord
 	{
 		return [
 			[['name'], 'required'],
-			[['topics_count'], 'integer'],
 			[['name', 'summary'], 'string', 'max' => 255]
 		];
 	}
@@ -42,9 +41,9 @@ class Node extends \yii\db\ActiveRecord
 	{
 		return [
 			'id' => 'ID',
-			'name' => 'Name',
-			'summary' => 'Summary',
-			'topics_count' => 'Topics Count',
+			'name' => '名称',
+			'summary' => '简介',
+			'topics_count' => '主题统计',
 			'lft' => 'Lft',
 			'rgt' => 'Rgt',
 			'level' => 'Level',

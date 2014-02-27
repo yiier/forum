@@ -61,14 +61,22 @@ class NodeController extends Controller
 	public function actionCreate()
 	{
 		$model = new Node;
-
-		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			return $this->redirect(['view', 'id' => $model->id]);
-		} else {
-			return $this->render('create', [
-				'model' => $model,
-			]);
+		if ($model->load(Yii::$app->request->post())) {
+			$post=Yii::$app->request->post();
+			$parent_node = $post['node']['parent'];
+	        if ($parent_node != 0) {
+	            $node = Node::find($parent_node);
+	            $model->appendTo($node);
+	            return $this->redirect(['view', 'id' => $model->id]);
+	        }
+	        if ($model->saveNode()) {
+				return $this->redirect(['view', 'id' => $model->id]);
+			}
 		}
+        
+		return $this->render('create', [
+			'model' => $model,
+		]);
 	}
 
 	/**
@@ -81,7 +89,26 @@ class NodeController extends Controller
 	{
 		$model = $this->findModel($id);
 
-		if ($model->load(Yii::$app->request->post()) && $model->save()) {
+		if ($model->load(Yii::$app->request->post())) {
+			$post=Yii::$app->request->post();
+			$parent_node = $post['node']['parent'];
+	        if ($parent_node != 0) {
+	            $node = Node::find($parent_node);
+                $parent=$model->parent()->one();
+                if ($node->id !== $model->id && $node->id !== $parent->id) {
+                    $model->moveAsLast($node);
+                }
+	        }
+	        if ($model->saveNode()) {
+				return $this->redirect(['view', 'id' => $model->id]);
+			}
+		}
+        
+		return $this->render('update', [
+			'model' => $model,
+		]);
+
+		if ($model->load(Yii::$app->request->post()) && $model->saveNode()) {
 			return $this->redirect(['view', 'id' => $model->id]);
 		} else {
 			return $this->render('update', [
