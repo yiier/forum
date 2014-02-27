@@ -1,12 +1,12 @@
 forum
 =====
 
-forum团队专用的仓库
+forum Based on yii2,this is an experimental product, not for production, unless you know what you are doing
 
 
-##Just do IT.
+## forum feature.
 
-暂定功能，社区，wiki，编辑器用markdown，积分机制为扣分，无限分类，rbac，第三方登陆(weibo,qq)
+community, wiki, edit Used markdown, unlimited categories, rbac, third-party login (weibo, qq)
 
 
 DIRECTORY STRUCTURE
