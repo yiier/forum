@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2014 年 02 月 27 日 03:32
+-- 生成日期: 2014 年 02 月 27 日 08:27
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `forum`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tbl_node`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_node` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `summary` varchar(255) NOT NULL,
+  `topics_count` int(11) NOT NULL,
+  `lft` int(10) unsigned NOT NULL,
+  `rgt` int(10) unsigned NOT NULL,
+  `level` smallint(5) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `lft` (`lft`),
+  KEY `rgt` (`rgt`),
+  KEY `level` (`level`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
