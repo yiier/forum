@@ -7,6 +7,7 @@ use app\models\PasswordResetRequestForm;
 use app\models\ResetPasswordForm;
 use app\models\SignupForm;
 use app\models\ContactForm;
+use app\models\Topic;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\AccessControl;
@@ -59,7 +60,11 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
-		return $this->render('index');
+		$topics = Topic::find()->with('user')->all();
+
+		return $this->render('index', [
+			'topics' => $topics,
+		]);
 	}
 
 	public function actionLogin()

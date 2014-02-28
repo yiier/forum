@@ -63,4 +63,9 @@ class Topic extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Node::className(), ['id' => 'node_id']);
     }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
 }
