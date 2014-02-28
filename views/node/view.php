@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'method' => 'post',
 			],
 		]); ?>
+		<?= Html::a('发帖', ['topic/create', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
 	</p>
 
 	<?php echo DetailView::widget([

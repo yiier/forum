@@ -33,7 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
 			'id',
 			'title',
 			'content:ntext',
-			'node_id',
+			[
+			'label'=>'节点',
+			'value'=>$model->node->name
+			],
 			'user_id',
 			'created_at',
 			'updated_at',

@@ -23,6 +23,8 @@ use yii\widgets\ActiveForm;
 
 		<?= $form->field($model, 'content') ?>
 
+		<?= $form->field($model, 'source') ?>
+
 		<?= $form->field($model, 'node_id') ?>
 
 		<?= $form->field($model, 'user_id') ?>

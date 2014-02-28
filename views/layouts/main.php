@@ -37,7 +37,7 @@ AppAsset::register($this);
 				['label' => '社区', 'url' => ['/topic/index']],
 				['label' => 'wiki', 'url' => ['/wiki/index']],
 				['label' => '会员', 'url' => ['/user/index']],
-				['label' => '分类', 'url' => ['/node/index']],
+				['label' => '节点', 'url' => ['/node/index']],
 				['label' => '关于', 'url' => ['/site/about']],
 				['label' => '联系', 'url' => ['/site/contact']],
 			];

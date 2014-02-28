@@ -33,9 +33,8 @@ class Topic extends \yii\db\ActiveRecord
 	public function rules()
 	{
 		return [
-			[['title', 'source', 'node_id'], 'required'],
+			[['title', 'source'], 'required'],
 			[['source'], 'string'],
-			[['node_id'], 'integer'],
 			[['title'], 'string', 'max' => 255]
 		];
 	}
@@ -47,10 +46,10 @@ class Topic extends \yii\db\ActiveRecord
 	{
 		return [
 			'id' => 'ID',
-			'title' => 'Title',
-			'content' => 'Content',
-			'source' => 'source',
-			'node_id' => 'Node ID',
+			'title' => '标题',
+			'content' => '内容',
+			'source' => '源',
+			'node_id' => '节点',
 			'user_id' => 'User ID',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
@@ -59,4 +58,9 @@ class Topic extends \yii\db\ActiveRecord
 			'replied_at' => 'Replied At',
 		];
 	}
+
+	public function getNode()
+    {
+        return $this->hasOne(Node::className(), ['id' => 'node_id']);
+    }
 }

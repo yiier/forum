@@ -14,6 +14,7 @@ class TopicSearch extends Model
 	public $id;
 	public $title;
 	public $content;
+	public $source;
 	public $node_id;
 	public $user_id;
 	public $created_at;
@@ -26,7 +27,7 @@ class TopicSearch extends Model
 	{
 		return [
 			[['id', 'node_id', 'user_id', 'created_at', 'updated_at', 'replies_count', 'last_reply_user_id', 'replied_at'], 'integer'],
-			[['title', 'content'], 'safe'],
+			[['title', 'content', 'source'], 'safe'],
 		];
 	}
 
@@ -39,6 +40,7 @@ class TopicSearch extends Model
 			'id' => 'ID',
 			'title' => 'Title',
 			'content' => 'Content',
+			'source' => 'source',
 			'node_id' => 'Node ID',
 			'user_id' => 'User ID',
 			'created_at' => 'Created At',
@@ -63,6 +65,7 @@ class TopicSearch extends Model
 		$this->addCondition($query, 'id');
 		$this->addCondition($query, 'title', true);
 		$this->addCondition($query, 'content', true);
+		$this->addCondition($query, 'source', true);
 		$this->addCondition($query, 'node_id');
 		$this->addCondition($query, 'user_id');
 		$this->addCondition($query, 'created_at');

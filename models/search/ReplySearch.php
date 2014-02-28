@@ -14,6 +14,7 @@ class ReplySearch extends Model
 	public $id;
 	public $topic_id;
 	public $content;
+	public $source;
 	public $user_id;
 	public $created_at;
 	public $updated_at;
@@ -22,7 +23,7 @@ class ReplySearch extends Model
 	{
 		return [
 			[['id', 'topic_id', 'user_id', 'created_at', 'updated_at'], 'integer'],
-			[['content'], 'safe'],
+			[['content', 'source'], 'safe'],
 		];
 	}
 
@@ -35,6 +36,7 @@ class ReplySearch extends Model
 			'id' => 'ID',
 			'topic_id' => 'Topic ID',
 			'content' => 'Content',
+			'source' => 'source',
 			'user_id' => 'User ID',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
@@ -55,6 +57,7 @@ class ReplySearch extends Model
 		$this->addCondition($query, 'id');
 		$this->addCondition($query, 'topic_id');
 		$this->addCondition($query, 'content', true);
+		$this->addCondition($query, 'source', true);
 		$this->addCondition($query, 'user_id');
 		$this->addCondition($query, 'created_at');
 		$this->addCondition($query, 'updated_at');

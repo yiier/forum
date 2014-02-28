@@ -58,17 +58,19 @@ class TopicController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 * @return mixed
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		$model = new Topic;
-
-		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			return $this->redirect(['view', 'id' => $model->id]);
-		} else {
-			return $this->render('create', [
-				'model' => $model,
-			]);
+		if ($model->load(Yii::$app->request->post())) {
+			$model->node_id=$id;
+			if ($model->save()) {
+				return $this->redirect(['view', 'id' => $model->id]);
+			}
 		}
+
+		return $this->render('create', [
+			'model' => $model,
+		]);
 	}
 
 	/**
