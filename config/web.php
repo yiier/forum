@@ -36,13 +36,14 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],
-	    'modules' => [
-	        'admin' => [
-	            'class' => 'app\modules\admin\Module',
-	        ],
-	    ],
+	    
 		'db' => $db,
 	],
+	'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+        ],
+    ],
 	'params' => $params,
 ];
 
