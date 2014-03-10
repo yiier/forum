@@ -53,7 +53,7 @@ AppAsset::register($this);
 			        	['label' => '个人设置', 'url' => '/'],
 			            ['label' => '退出', 'url' => ['/site/logout']],
 			        ],
-			        ];
+			    ];
 			}
 			echo Nav::widget([
 				'options' => ['class' => 'navbar-nav'],

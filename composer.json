@@ -18,7 +18,8 @@
 		"yiisoft/yii2-swiftmailer": "*",
 		"yiisoft/yii2-authclient": "*",
 		"creocoder/yii2-nested-set-behavior": "*",
-		"robregonm/yii2-auth": "dev-master"
+		"robregonm/yii2-auth": "dev-master",
+		"yiisoft/yii2-elasticsearch": "*"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",
