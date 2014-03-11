@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\markdown\MarkdownEditor;
 
 /**
  * @var yii\web\View $this
@@ -17,6 +18,11 @@ use yii\widgets\ActiveForm;
 		<?= $form->field($model, 'title')->textInput(['maxlength' => 255]) ?>
 
 		<?= $form->field($model, 'source')->textarea(['rows' => 6]) ?>
+
+		<?php echo MarkdownEditor::widget([
+		    'model' => $model,
+		    'attribute' => 'content',
+		]);?>
 
 		<div class="form-group">
 			<?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
