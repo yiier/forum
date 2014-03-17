@@ -1,95 +1,94 @@
-forum
+论坛
 =====
 
-forum based on yii2,this is an experimental product, not use for production, unless you know what you are doing
+基于Yii2的论坛。
+注意：这是个体验项目，不要用于生产环境，除非你能自己搞定技术细节。
 
 
-## forum feature.
+## 功能特性
 
-community, wiki, edit Used markdown, unlimited categories, rbac, third-party login (weibo, qq)
+社区、Wiki、markdown编辑、无线分类、RBAC、第三方登录接入（weibo, qq）
 
 
-DIRECTORY STRUCTURE
+目录结构
 -------------------
 
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
-      config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
-      runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
+      assets/             包含图片CSS等资源
+      commands/           包含控制台命令（控制器）
+      config/             包含应用配置
+      controllers/        包含控制器的类文件
+      mail/               包含给emails使用的视图文件
+      models/             包含模型类
+      runtime/            包含运行环境生成的文件
+      tests/              包含基础应用模版所需的测试文件
+      vendor/             包含第三方依赖库
+      views/              包含视图文件
+      web/                包含Web资源的入口脚本
 
 
 
-REQUIREMENTS
+需求
 ------------
 
-The minimum requirement by this application template that your Web server supports PHP 5.4.0.
+支持PHP 5.4.0以上的Web服务器.
 
 
-INSTALLATION
+安装
 ------------
 
-### Install via github
+### 通过GitHub安装
 
 ~~~
 clone https://github.com/yiier/forum.git
 ~~~
 
-Then download [Composer](https://getcomposer.org/composer.phar)
-take the composer.phar in the web root directory,using the following command:
+接着下载 [Composer](https://getcomposer.org/composer.phar)
+把composer.phar放进web根目录，然后运行下面的命令：
 
 ~~~
 php composer.phar update --prefer-dist
 ~~~
 
-You can then access the application through the following URL:
+然后你可以通过以下URL访问论坛。
 
 ~~~
 http://localhost/forum/web/
 ~~~
 
-### Install via Composer
+### 通过Composer安装
 
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+若你没有安装 [Composer](http://getcomposer.org/)，你可以参照下面的文档来安装下先 [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix)。
 
-You can then install this application template using the following command:
+然后运行如下命令来安装：
 
 ~~~
 php composer.phar create-project --prefer-dist --stability=dev yiier/forum forum
 ~~~
 
-Now you should be able to access the application through the following URL, assuming `forum` is the directory
-directly under the Web root.
+假定 `forum`在你的Web root根目录下，则现在可以通过如下URL访问该论坛了：
 
 ~~~
 http://localhost/forum/web/
 ~~~
 
 
-CONFIGURATION
+配置
 -------------
 
-### Database
+### 数据库
 
-Edit the file `config/db.php` with real data, for example:
+用真实的数据修改 `config/db.php` 文件：
 
 ```php
 return [
 	'class' => 'yii\db\Connection',
-	'dsn' => 'mysql:host=127.0.0.1;dbname=forum', // Don't use localhost, Because IPv4/IPv6 recognition very slow to connect to mysql
+	'dsn' => 'mysql:host=127.0.0.1;dbname=forum', // 这里别放localhost，连接到Mysql时对IPv4/IPv6的检测非常慢
 	'username' => 'root',
 	'password' => '1234',
 	'charset' => 'utf8',
 ];
 ```
 
-**NOTE:** `forum.sql` in the root folder, import it into the database, this has to be done manually before you can access it.
+**NOTE:** 从前有个 `forum.sql` 静静地躺在根目录里，你必须在访问数据库之前，先手动导入这个文件（赋予论坛以灵魂）。
 
-Also check and edit the other files in the `config/` directory to customize your application.
+同样，你顺便也检查并修改下 `config/` 的其他文件，或其他段落，来自定义你自己的应用。
