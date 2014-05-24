@@ -31,7 +31,7 @@ $this->title = 'Yiier yii2天朝社区';
 		<div class="col-lg-2">
 			<ul class="nav nav-pills nav-stacked">
 			<?php foreach ($nodes as $key => $value): ?>
-				<li><?= Html::a(Html::encode($value->name), ['node/view', 'id' => $value->id]) ?></li>
+				<li><?= Html::a(Html::encode($value->name), ['category/view', 'id' => $value->id]) ?></li>
 			<?php endforeach ?>
 			</ul>
 		</div>

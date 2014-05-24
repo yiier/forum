@@ -7,7 +7,7 @@ use app\models\Node;
 use app\models\search\NodeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\web\VerbFilter;
+use yii\filters\VerbFilter;
 
 /**
  * NodeController implements the CRUD actions for Node model.
@@ -125,7 +125,7 @@ class NodeController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->findModel($id)->delete();
+		$this->findModel($id)->deleteNode();
 		return $this->redirect(['index']);
 	}
 

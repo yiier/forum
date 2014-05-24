@@ -7,7 +7,7 @@ use app\models\Topic;
 use app\models\search\TopicSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\web\VerbFilter;
+use yii\filters\VerbFilter;
 
 /**
  * TopicController implements the CRUD actions for Topic model.

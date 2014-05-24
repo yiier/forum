@@ -7,7 +7,7 @@ use app\models\Reply;
 use app\models\search\ReplySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\web\VerbFilter;
+use yii\filters\VerbFilter;
 
 /**
  * ReplyController implements the CRUD actions for Reply model.

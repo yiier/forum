@@ -8,12 +8,12 @@ use app\models\ResetPasswordForm;
 use app\models\SignupForm;
 use app\models\ContactForm;
 use app\models\Topic;
-use app\models\Node;
+use app\models\Category;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
-use yii\web\AccessControl;
+use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\web\VerbFilter;
+use yii\filters\VerbFilter;
 use Yii;
 
 class SiteController extends Controller
@@ -62,7 +62,7 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$topics = Topic::find()->with('user')->all();
-		$nodes = Node::find()->addOrderBy('lft')->all();
+		$nodes = Category::find()->addOrderBy('lft')->all();
 
 		return $this->render('index', [
 			'topics' => $topics, 'nodes' => $nodes 
