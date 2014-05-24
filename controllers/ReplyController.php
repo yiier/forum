@@ -110,11 +110,11 @@ class ReplyController extends Controller
 	 * @throws NotFoundHttpException if the model cannot be found
 	 */
 	protected function findModel($id)
-	{
-		if ($id !== null && ($model = Reply::find($id)) !== null) {
-			return $model;
-		} else {
-			throw new NotFoundHttpException('The requested page does not exist.');
-		}
-	}
+    {
+        if (($model = Reply::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
 }
