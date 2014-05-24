@@ -62,10 +62,9 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$topics = Topic::find()->with('user')->all();
-		$nodes = Category::find()->addOrderBy('lft')->all();
 
 		return $this->render('index', [
-			'topics' => $topics, 'nodes' => $nodes 
+			'topics' => $topics
 		]);
 	}
 
