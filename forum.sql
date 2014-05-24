@@ -41,10 +41,10 @@ CREATE TABLE IF NOT EXISTS `tbl_node` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- 转存表中的数据 `tbl_node`
+-- 转存表中的数据 `tbl_category`
 --
 
-INSERT INTO `tbl_node` (`id`, `name`, `summary`, `topics_count`, `lft`, `rgt`, `level`) VALUES
+INSERT INTO `tbl_category` (`id`, `name`, `summary`, `topics_count`, `lft`, `rgt`, `level`) VALUES
 (1, '根节点', '全站根节点', 0, 1, 6, 1),
 (2, 'yii2', '', 0, 2, 2, 2),
 (3, 'gii', 'sss', 0, 5, 2, 4);
