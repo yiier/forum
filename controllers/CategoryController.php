@@ -3,8 +3,8 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Node;
-use app\models\search\NodeSearch;
+use app\models\Category;
+use app\models\search\CategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * NodeController implements the CRUD actions for Node model.
  */
-class NodeController extends Controller
+class CategoryController extends Controller
 {
 	public function behaviors()
 	{
@@ -32,7 +32,7 @@ class NodeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$searchModel = new NodeSearch;
+		$searchModel = new CategorySearch;
 		$dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
 		return $this->render('index', [
@@ -60,12 +60,12 @@ class NodeController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model = new Node;
+		$model = new Category;
 		if ($model->load(Yii::$app->request->post())) {
 			$post=Yii::$app->request->post();
 			$parent_node = $post['node']['parent'];
 	        if ($parent_node != 0) {
-	            $node = Node::find($parent_node);
+	            $node = Category::find($parent_node);
 	            $model->appendTo($node);
 	            return $this->redirect(['view', 'id' => $model->id]);
 	        }
@@ -92,16 +92,15 @@ class NodeController extends Controller
 		if ($model->load(Yii::$app->request->post())) {
 			$post=Yii::$app->request->post();
 			$parent_node = $post['node']['parent'];
+			$model->saveNode();
 	        if ($parent_node != 0) {
-	            $node = Node::find($parent_node);
+	            $node = Category::find($parent_node);
                 $parent=$model->parent()->one();
                 if ($node->id !== $model->id && $node->id !== $parent->id) {
                     $model->moveAsLast($node);
                 }
 	        }
-	        if ($model->saveNode()) {
-				return $this->redirect(['view', 'id' => $model->id]);
-			}
+	        return $this->redirect(['view', 'id' => $model->id]);
 		}
         
 		return $this->render('update', [
@@ -138,7 +137,7 @@ class NodeController extends Controller
 	 */
 	protected function findModel($id)
 	{
-		if ($id !== null && ($model = Node::find($id)) !== null) {
+		if ($id !== null && ($model = Category::find($id)) !== null) {
 			return $model;
 		} else {
 			throw new NotFoundHttpException('The requested page does not exist.');

@@ -4,12 +4,12 @@ namespace app\models\search;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Node;
+use app\models\Category;
 
 /**
- * NodeSearch represents the model behind the search form about `app\models\Node`.
+ * NodeSearch represents the model behind the search form about `app\models\Category`.
  */
-class NodeSearch extends Model
+class CategorySearch extends Model
 {
 	public $id;
 	public $name;
@@ -45,7 +45,7 @@ class NodeSearch extends Model
 
 	public function search($params)
 	{
-		$query = Node::find();
+		$query = Category::find();
 		$dataProvider = new ActiveDataProvider([
 			'query' => $query,
 		]);
