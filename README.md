@@ -6,7 +6,7 @@ forum based on yii2,this is an experimental product, not use for production, unl
 
 ## forum feature.
 
-community, wiki, edit Used markdown, unlimited categories, rbac, third-party login (weibo, qq)
+community, wiki, edit Used markdown, tags, rbac, third-party login (weibo, qq)
 
 
 DIRECTORY STRUCTURE
