@@ -27,3 +27,6 @@ composer.phar
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+
+# Local DB file
+config/db-local.php
