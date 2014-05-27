@@ -6,7 +6,7 @@ forum based on yii2,this is an experimental product, not use for production, unl
 
 ## forum feature.
 
-community, wiki, edit Used markdown, tags, rbac, third-party login (weibo, qq)
+community, wiki, edit Used markdown, tags, rbac, third-party login (weibo, qq), announcements
 
 
 DIRECTORY STRUCTURE
@@ -30,6 +30,8 @@ REQUIREMENTS
 ------------
 
 The minimum requirement by this application template that your Web server supports PHP 5.4.0.
+The Memory limit must not lower than 6MB, recommended 128MB. You can open up `requirements.php` file from root folder in browser to
+explore more requirements details.
 
 
 INSTALLATION
@@ -73,12 +75,12 @@ http://localhost/forum/web/
 ~~~
 
 
-CONFIGURATION
+SETUP
 -------------
 
 ### Database
 
-Edit the file `config/db.php` with real data, for example:
+Create the file `config/db-local.php` with the connection infomation for your local environment, for example:
 
 ```php
 return [

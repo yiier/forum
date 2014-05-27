@@ -7,7 +7,7 @@
 
 ## 功能特性
 
-社区、Wiki、markdown编辑、无线分类、RBAC、第三方登录接入（weibo, qq）
+社区、Wiki、markdown 编辑、标签分类、RBAC、第三方登录接入（weibo, qq）、信息发布
 
 
 目录结构
@@ -31,6 +31,7 @@
 ------------
 
 支持PHP 5.4.0以上的Web服务器.
+内存限制不能小于 6 MB，建议使用默认数值 128 MB。 你可以在浏览器内打开根目录下的 `requirements.php` 文件来了解更多需求详情。
 
 
 安装
@@ -77,7 +78,7 @@ http://localhost/forum/web/
 
 ### 数据库
 
-用真实的数据修改 `config/db.php` 文件：
+用你当前的本地数据库链接信息，创建 `config/db-local.php` 文件，如：
 
 ```php
 return [
