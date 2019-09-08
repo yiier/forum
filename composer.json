@@ -20,8 +20,7 @@
 		"creocoder/yii2-nested-set-behavior": "*",
 		"robregonm/yii2-auth": "dev-master",
 		"kartik-v/yii2-markdown": "dev-master",
-		"yiisoft/yii2-elasticsearch": "*",
-		"kartik-v/yii2-markdown": "dev-master"
+		"yiisoft/yii2-elasticsearch": "*"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",
